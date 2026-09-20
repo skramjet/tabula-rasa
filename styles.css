@@ -1,0 +1,472 @@
+/* ============================================================
+   Tabula Rasa — shared stylesheet
+   Asher Atkins. Rebuilt from the Figma export.
+   ============================================================ */
+
+/* ---------- Fonts ----------
+   Google Fonts (linked in each page) gives real regular + bold.
+   Local files, if present, are the offline fallback. */
+@font-face {
+  font-family: 'JetBrains Mono Local';
+  src: url('fonts/jetbrains-mono.woff2') format('woff2'),
+       url('fonts/jetbrains-mono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Local';
+  src: url('fonts/ibm-plex-sans.woff2') format('woff2'),
+       url('fonts/ibm-plex-sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --mono: 'JetBrains Mono', 'JetBrains Mono Local', ui-monospace, Menlo, Consolas, monospace;
+  --sans: 'IBM Plex Sans', 'IBM Plex Sans Local', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  --ink: #000;
+  --ink-muted: #505050;
+  --line: #000;
+  --paper: #fff9f6;   /* page frame (the white box) */
+  --canvas: #fff9f6;  /* margin around the frame on wide screens */
+  --row-tint: #f6f1ee;
+
+  /* Whole-site zoom. 0.8 = how it looks at 80% zoom in Chrome, 1 = full size. */
+  --zoom: 0.8;
+
+  --sidebar-width: 240px;
+  --content-width: 450px;   /* overridden per page */
+  --pad-top: 30px;          /* overridden per page */
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  zoom: var(--zoom);
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------- Page frame ----------
+   No outer border and no max-width: the page fills the window and stays
+   anchored to the top-left, so zooming out just adds empty space on the
+   right instead of showing a floating box in the middle. */
+.page {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: calc(100vh / var(--zoom));
+  background: var(--paper);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+  border-right: 1px solid var(--line);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 50px 30px;
+}
+
+.logo {
+  display: inline-block;
+  width: max-content;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nav-list a {
+  font-family: var(--mono);
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.nav-list a[aria-current="page"] {
+  font-weight: 700;
+}
+
+/* ---------- Main column ---------- */
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--pad-top) 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content > * {
+  width: 100%;
+  max-width: var(--content-width);
+}
+
+/* ---------- Type ---------- */
+h1 {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 1.3;
+  color: var(--ink-muted);
+}
+
+h2 {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.small {
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb a[aria-current="page"],
+.breadcrumb a.here {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---------- Detail tables ---------- */
+.details {
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+}
+
+.details-row + .details-row {
+  border-top: 1px solid var(--line);
+}
+
+.details-row:nth-child(even) {
+  background: var(--row-tint);
+}
+
+/* ---------- Interview grid (Registration++) ---------- */
+.grid-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.grid-table > div {
+  padding: 10px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: break-word;
+}
+
+.grid-table > div:nth-child(n + 6):nth-child(-n + 10) {
+  background: var(--row-tint);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section.tight {
+  gap: 0;
+}
+
+.section.gap-6 {
+  gap: 6px;
+}
+
+.spaced {
+  margin-top: 11px;
+}
+
+ul.list {
+  margin: 11px 0;
+  padding-left: 24px;
+}
+
+ul.list.snug {
+  margin: 0 0 0 0;
+}
+
+ul.list li::marker {
+  font-size: 0.8em;
+}
+
+/* ---------- Figures ---------- */
+figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+figure img {
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
+figure.plain img {
+  border: 0;
+}
+
+figcaption {
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+figcaption.body-caption {
+  font-family: var(--sans);
+  font-size: 16px;
+}
+
+.img-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.img-row.wide-gap {
+  gap: 38px;
+}
+
+.img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding: 24px 22px;
+  border: 1px solid var(--line);
+}
+
+.logo-box img {
+  width: 100%;
+  border: 0;
+}
+
+/* ---------- Project cards (Work index) ---------- */
+.cards {
+  /* 1 = full size, 0.75 = three-quarter size. Scales the whole block. */
+  --card-scale: 0.75;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  max-width: calc(var(--content-width) * var(--card-scale));
+  gap: calc(20px * var(--card-scale));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  background: var(--paper);
+}
+
+.card h2 {
+  padding: calc(10px * var(--card-scale));
+  font-size: calc(20px * var(--card-scale));
+  border-bottom: 1px solid var(--line);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.card p {
+  padding: calc(10px * var(--card-scale));
+  font-size: calc(16px * var(--card-scale));
+  border-top: 1px solid var(--line);
+}
+
+.card:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Footer (Contact) ---------- */
+.colophon {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-list a {
+  width: max-content;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 880px) {
+  /* Phones are already small. Uncomment to show them at full size. */
+  /* :root { --zoom: 1; } */
+
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .nav {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 16px 20px;
+  }
+
+  .logo img {
+    width: 56px;
+    height: auto;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .nav-list a {
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 24px 20px 48px;
+  }
+
+  .content > * {
+    max-width: none;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .cards {
+    --card-scale: 1;
+    max-width: none;
+    grid-template-columns: 1fr;
+  }
+
+  .details-row {
+    grid-template-columns: 8.5rem 1fr;
+  }
+
+  .grid-table {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-table > div:nth-child(n + 6):nth-child(-n + 10) {
+    background: none;
+  }
+
+  .img-row.wide-gap {
+    gap: 12px;
+  }
+}

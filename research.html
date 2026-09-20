@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research project.">
+  <title>atk/research</title>
+
+  <link rel="icon" href="appicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>:root { --content-width: 450px; --pad-top: 30px; }</style>
+</head>
+<body>
+  <div class="page">
+
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Main">
+        <a class="logo" href="home.html">
+          <img src="tabula_rasa_assets_exported/logo_hires.png" width="81" height="47" alt="home">
+        </a>
+        <ul class="nav-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html" aria-current="page">Research</a></li>
+          <li><a href="work-homepage.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <p class="breadcrumb">
+        <a href="research.html" class="here">Research</a>
+        <span aria-hidden="true">/</span>
+        <a href="research.html" aria-current="page">CTX Database</a>
+      </p>
+
+      <h1>IRP’s Central Texas Database</h1>
+
+      <dl class="details">
+        <div class="details-row">
+          <dt>Time:</dt>
+          <dd>May 2025-Present.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Collaboration:</dt>
+          <dd>Senior undergraduate researcher on the CTX Retold project at UT Austin’s IRP.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Tools:</dt>
+          <dd>Teams, Excel, Figma. Some HTML/CSS/Java.</dd>
+        </div>
+      </dl>
+
+      <div class="section">
+        <figure>
+          <img src="tabula_rasa_assets_exported/website/research/Container/Frame%2091/Frame%2056/Screenshot%202026-09-13%20at%2012.48.58%201.png" alt="Bastrop County Archive homepage with a historic bird's-eye map of Bastrop and a 'New Map Methodologies' banner">
+          <figcaption>Bastrop County Archive’s landing page.</figcaption>
+        </figure>
+
+        <h2>Development</h2>
+        <p>With my coworkers at IRP, I am building and designing a cloud-based textual database archive to host our Central Texas texts and formatted Census data. With this archive, we aim to support quantitative and qualitative analysis of demographers as well as local stakeholders such as the Bastrop County African American Cultural Center.</p>
+        <p>I lead frontend development of the website on a team of undergraduate AWS developers and am responsible for some of the decisions surrounding document metadata. I also lead a team responsible for the creation of GIS visualizations of antebellum slaveholder property.</p>
+        <p>The volunteer community genealogists at the Bastrop County African American Cultural Center - help to ground our project and inspired the work in the first place.</p>
+        <p class="spaced">People with different levels of familiarity with digital archive search functions, from the community genealogists to the academic demographers - are both major stakeholders in this platform, and begin their search on our site with different intents. <strong>Reconciling the two was a major priority when prototyping the front end, and emerged as a flattening of the search system on the surface level.</strong> Similar to how Google’s search engine functions (but on a much smaller scale), the search feature robustness is underneath the UI in a semantic search. Thanks to Aaron Johnson and Mezmure Dawit for making this work!</p>
+
+        <figure>
+          <img src="tabula_rasa_assets_exported/website/research/Container/Frame%20108/Frame%20107/Screenshot%202026-09-17%20at%2015.53.19%201.png" alt="The archive's search page: filter sidebar on the left and result cards on the right">
+          <figcaption>The Bastrop County Archive’s search function.</figcaption>
+        </figure>
+      </div>
+
+      <div class="section">
+        <h2>Unsolved Questions</h2>
+        <p>Two of the biggest challenges in the project and by far the questions we have grappled with the longest are inherently user experience questions. These questions are:</p>
+        <ul class="list">
+          <li>How can we use artificial intelligence to assist us in the execution of the methodology or the presentation - whether it be through an in-house data cleaning client or a conversational user interface on the frontend?</li>
+          <li>How do we visualize textually-sourced granular spatial data with no connection to the Census or single coordinate points?</li>
+        </ul>
+        <p>Unlike other demographic microdata projects like IPUMS, Census data is not harmonized across time and is not flat - i.e. there are important notes in the margins, errata, and unusual 19th Century name spellings. The data’s structure - how the columns are named and the type of data within each column - varies from year to year, and it has not been normalized. Visualizing granular data, especially spatial data with evidence that only appears in textual anecdotes and offsite records, poses novel inquiries about visualization.</p>
+      </div>
+
+      <div class="section">
+        <h2>Workshops / Presentations</h2>
+        <p>A part of my responsibilities at IRP outside of my research involve creating and teaching workshops to other undergraduates on Figma basics and design theory. I led one-on-one tutorials with students and taught lectures for research cohorts from other parts of UT’s African and African Diaspora Studies department, serving a total of <strong>50+ students in several workshops</strong> where students gain an understanding of Figma and leave with a research poster and a vocabulary to <strong>express their aesthetic opinions more professionally.</strong></p>
+
+        <figure>
+          <img src="tabula_rasa_assets_exported/website/research/Container/Frame%2086/Frame%2058/25_AADS_2026_IRP%20Kickoff_DSC08305_08305%201.jpg" alt="Presenting the 'Our Goal' slide in a lecture room at the IRP Kickoff">
+          <figcaption>Me presenting at the IRP Kickoff.</figcaption>
+        </figure>
+
+        <p>I have also been a spokesman for our research at several UT events, including the College of Liberal Arts Research Fair, the annual IRP Kickoff and a tour of the BCAACC in Bastrop County. I introduced prospective COLA/AADS students to our research, advised undergraduates in proposing new opportunities for their own independent research within IRP and trained new undergraduates on our data cleaning methodologies, improving our month-to-month cleaning output fivefold.</p>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

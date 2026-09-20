@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registration++">
+  <title>atk/work/registration</title>
+
+  <link rel="icon" href="appicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>:root { --content-width: 450px; --pad-top: 30px; }</style>
+</head>
+<body>
+  <div class="page">
+
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Main">
+        <a class="logo" href="home.html">
+          <img src="tabula_rasa_assets_exported/logo_hires.png" width="81" height="47" alt="home">
+        </a>
+        <ul class="nav-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="work-homepage.html" aria-current="page">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <p class="breadcrumb">
+        <a href="work-homepage.html" class="here">&lt; Work</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-infosim.html">InfoSim Frontend Intern</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-granola.html">Granola</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-regis.html" aria-current="page">Registration++</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-wopet.html">Pet feeder redesign</a>
+      </p>
+
+      <h1>Registration++</h1>
+
+      <dl class="details">
+        <div class="details-row">
+          <dt>Time:</dt>
+          <dd>Three months.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Collaboration:</dt>
+          <dd>Member of a four person group.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Tools:</dt>
+          <dd>Figma, Illustrator, Google Suite, Excel.</dd>
+        </div>
+      </dl>
+
+      <div class="section">
+        <h2>Problem</h2>
+        <p>Undergraduates often face uncertainty and frustration during course registration due to scheduling conflicts, varying course difficulty, and uneven workload distribution.</p>
+      </div>
+
+      <div class="section">
+        <h2>Solution</h2>
+        <p>A “one stop shop” for all things UT registration: the course catalog, class descriptions, stats and syllabi, grade curves, RateMyProfessor reviews, and a schedule creator all in one app. This tool addresses these challenges by helping students create well-balanced schedules that reduce conflicts, align with their academic goals, and provide greater confidence in the registration process.</p>
+      </div>
+
+      <div class="section">
+        <h2>User Interviews</h2>
+        <p>Before we began building, we asked eight undergraduates about their experiences with the beginning class registration in a structured interview. Here is the breakdown of the group:</p>
+        <div class="grid-table">
+          <div>By Class:</div>
+          <div>2 Freshmen</div>
+          <div>2 Soph.</div>
+          <div>2 Junior</div>
+          <div>2 Senior</div>
+          <div>By Major:</div>
+          <div>1 Education</div>
+          <div>2 McCombs*</div>
+          <div>4 Liberal Arts</div>
+          <div>4 CNS</div>
+          <div>Other facts:</div>
+          <div>87% Considering Higher Ed</div>
+          <div>2 Double Majors</div>
+          <div>1 Intl. Student</div>
+          <div>1 Integrated Master’s Student</div>
+        </div>
+        <p class="small">*McCombs is a business school.</p>
+      </div>
+
+      <div class="section">
+        <h2>Stakeholders</h2>
+        <p>We then identified the four major stakeholders and their primary goals of this project:</p>
+      <dl class="details">
+        <div class="details-row">
+          <dt>Professors:</dt>
+          <dd>Balance class sizes and avoid over-underenrollment.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Academic Advisors:</dt>
+          <dd>Intern, working under a supervisor on a 6-person frontend team</dd>
+        </div>
+        <div class="details-row">
+          <dt>Registrar’s Office:</dt>
+          <dd>Maintains accurate course and degree requirement data</dd>
+        </div>
+        <div class="details-row">
+          <dt>IT Department:</dt>
+          <dd>Ensures technical feasibility, maintain system security</dd>
+        </div>
+      </dl>
+        <p>Given these stakeholders, we each created a different persona for student clients. Here was mine, a coasting senior who wants to minimize his semester workload in order to spend most of his time outside of class applying for jobs:</p>
+        <figure class="plain">
+          <img src="tabula_rasa_assets_exported/website/work-regis/Container/Frame%2070/Chill%20Chuck%201.png" alt="Persona sheet for 'Chill Chuck' with biography, motivations, goals and charts" style="border:1px solid #000">
+        </figure>
+      </div>
+
+      <div class="section">
+        <h2>Scenario</h2>
+        <p>Based on Chill Chuck’s habits and priorities, I placed him in a scenario in which he would be most susceptible to using our application:</p>
+        <figure class="plain">
+          <img src="tabula_rasa_assets_exported/website/work-regis/Container/Frame%2083/Frame%2084/unknown%201.png" alt="Hand-drawn six-panel storyboard of Chuck building his schedule" style="border:1px solid #000">
+        </figure>
+        <p>According to his user behavior gradients, Chuck wants to spend less time doing extracurriculars while he looks for a job. By providing a relative weekly homework load in addition to other course statistics sourced from syllabi and RateMyProfessor, he can better plan out his semester to get the things he wants to do in his senior year.</p>
+      </div>
+
+      <div class="section">
+        <h2>Final Product</h2>
+        <figure>
+          <img src="tabula_rasa_assets_exported/website/work-regis/Container/Frame%2082/Frame%2059/regis%2B%2Bartifact%201.png" alt="Course details screen for CH 302 with schedule, grade distribution and statistics sliders">
+          <figcaption class="body-caption">Course Details page designed by me based on our team’s design system, with relative class statistics as sliders.</figcaption>
+        </figure>
+      </div>
+
+      <div class="section gap-6">
+        <h2>Reflections</h2>
+        <p><strong>The end to end experience -</strong> This project was an experience of the entire UX research and design process in a microcosm, from user research to building design systems to iteration, all while making and defending design decisions with my team.</p>
+        <p class="spaced"><strong>Where students really build their schedules -</strong> As we discovered from our user interviews, the integrated UT schedule builder doesn’t serve many students. Students look for schedule-building functionality in apps like Excel rather than looking internally. By consolidating the entire registration process into one tab, more time would be spent on the application rather than bouncing between different solutions.</p>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

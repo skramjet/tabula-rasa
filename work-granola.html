@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Granola: an iOS app for granular synthesis, built in SwiftUI.">
+  <title>atk/work/granola</title>
+
+  <link rel="icon" href="appicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>:root { --content-width: 450px; --pad-top: 30px; }</style>
+</head>
+<body>
+  <div class="page">
+
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Main">
+        <a class="logo" href="home.html">
+          <img src="tabula_rasa_assets_exported/logo_hires.png" width="81" height="47" alt="home">
+        </a>
+        <ul class="nav-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="work-homepage.html" aria-current="page">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <p class="breadcrumb">
+        <a href="work-homepage.html" class="here">&lt; Work</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-infosim.html">InfoSim Frontend Intern</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-granola.html" aria-current="page">Granola</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-regis.html">Registration++</a>
+        <span aria-hidden="true">/</span>
+        <a href="work-wopet.html">Pet feeder redesign</a>
+      </p>
+
+      <h1>Granola</h1>
+
+      <dl class="details">
+        <div class="details-row">
+          <dt>Time:</dt>
+          <dd>4 weeks.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Collaboration:</dt>
+          <dd>Independent.</dd>
+        </div>
+        <div class="details-row">
+          <dt>Tools:</dt>
+          <dd>XCode (SwiftUI, Swift), Figma.</dd>
+        </div>
+      </dl>
+
+      <figure>
+        <div class="img-row" style="gap:20px">
+          <img src="tabula_rasa_assets_exported/website/work-granola/Container/Frame%20106/Frame%2073/Frame%2072/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-09-09%20at%2016.46.31%201.png" alt="Granola library screen listing recorded samples">
+          <img src="tabula_rasa_assets_exported/website/work-granola/Container/Frame%20106/Frame%2073/Frame%2072/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-09-09%20at%2016.48.10%201.png" alt="Granola effects screen with waveform and effect controls">
+        </div>
+        <figcaption>iOS Simulator screenshots of the final product.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="tabula_rasa_assets_exported/website/work-granola/Container/Frame%2060/Screenshot%202026-09-08%20at%2018.30.05%201.png" alt="Figma component sheet for the app's controls">
+        <figcaption>Figma components to be recreated in SwiftUI.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="tabula_rasa_assets_exported/website/work-granola/Container/Frame%2050/granolaFlow%201.jpg" alt="Prototype workflow diagram with screens connected by red arrows">
+        <figcaption>Granola’s prototype workflow.</figcaption>
+      </figure>
+
+      <div class="section">
+        <h2>About</h2>
+        <p>Granular synthesis is a method of sound design that creates textured sounds by repeatedly playing a small slice of a larger sample usually 50 milliseconds to 2 seconds in length. It is a particularly popular method of sound design with artists who use unorthodox samples, such as sounds from nature.</p>
+        <p class="spaced">The goal of this app was to make granular synthesis more accessible and portable by taking samples directly from the user’s surroundings using the iPhone's built-in microphone when the user is surrounded by their sampling material. Using Granola, users would be able to experiment on the go with a granular synthesis engine and four built-in audio effects.</p>
+      </div>
+
+      <div class="section">
+        <h2>Process</h2>
+        <p>This app was built using SwiftUI, Apple’s declarative programming language.</p>
+        <p class="spaced">Users record and save audio files within the app and can edit and play back audio effects.</p>
+        <p class="spaced">Features include in-app recording, file export, file persistence, file editing, and four audio effects taken from AVFoundation found in Apple developer documentation: reverb, delay, a 3 channel EQ, and Bitcrush.</p>
+        <p class="spaced">Libraries used: AVFoundation and <a href="#">dmrschmidt’s GitHub package</a> for generating waveform images in iOS style.</p>
+      </div>
+
+      <div class="section gap-6">
+        <h2>Reflections</h2>
+        <p><strong>You can’t (and shouldn’t) build everything from scratch.</strong> Learning to use and build upon what people have already created is an important part of software development - this was my first time using real development documentation to build an application. A big part of this project for me was understanding how my code would be based on Apple developer documents and GitHub repositories.</p>
+        <p class="spaced"><strong>This project was ambitious for its planned timeline.</strong> Figuring out how to scale the app’s functionality back while still being a useable standalone app that meets the project’s requirements was a necessary tradeoff. While the granulator remains to be built, the app still functions as a fun tool to experiment and play with.</p>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
