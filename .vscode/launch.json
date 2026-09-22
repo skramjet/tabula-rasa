@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "launch index.html against Chrome",
-            "file": "/Users/asheratkins/Desktop/tabula_rasa/index.html",
+            "file": "/Users/asheratkins/code/tabula_rasa/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
